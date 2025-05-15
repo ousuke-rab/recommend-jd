@@ -1,9 +1,9 @@
 const actresses = [
-  { name: "天神羽衣ちゃん（20）★★★☆☆", age: 20, work: "START-323 今、福岡で1番エロくて可愛い女の子を鮮度100％で産地直送！糸島生まれの地元愛溢れる次世代スター！ 天神羽衣 AV DEBUT"},
-  { name: "一宮るい（21or22）★★★☆☆", age: 21, work: "START-294 玩具も3Pも巨根も連続潮吹きも全部初めて！華奢な体がギュンギュン仰け反る本当に気持ち良いセックス4本番 一宮るい"},
-  { name: "瀬緒凛(21)★★★★★", age: 21, work: "GNI-004 新人 プレステージ専属デビュー AV経由で女子アナへ。夢を追う現役女子大生が清楚で淫らなSEX解禁。 瀬緒凛 2,710 9"},
-  { name:  "降矢あすか（21）★★★★★", age: 21, work: "FSDSS-888 真面目な剣道女子の性欲覚醒させる初体験づくしのイキまくり4本番スペシャル 降矢あすか"},
-  { name: "浜辺やよい"★★★★★, age: 30, work: "FNS-008 「私がイクとこ見てください…」初めてだらけの性感開発3本番スペシャル 浜辺やよい", likes: 7 },
+  { name: "天神羽衣ちゃん（20）", age: 20, work: "START-323 今、の地元愛溢れる次世代スター！ 天神羽衣 AV DEBUT", likes: 0 },
+  { name: "一宮るい（21or22）", age: 21, work: "START294 ！華奢な体 一宮るい", likes: 0 },
+  { name: "瀬緒凛(21)", age: 21, work: "GNI-004 新人 瀬緒凛 2,710 9", likes: 0 },
+  { name: "降矢あすか（21）", age: 21, work: "FSDSS-888 スペシャル 降矢あすか", likes: 0 },
+  { name: "浜辺やよい", age: 30, work: "FNS-008スペシャル 浜辺やよい", likes: 7 },
   { name: "天使もえ", age: 30, work: "もえもえ図書室", likes: 6 },
   { name: "篠田ゆう", age: 34, work: "雨の日の告白", likes: 5 },
   { name: "伊東ちなみ", age: 28, work: "恋と予感", likes: 6 },
@@ -19,7 +19,10 @@ function renderList() {
   list.innerHTML = "";
 
   actresses
-    .filter(a => a.name.includes(keyword) || a.work.includes(keyword))
+    .filter(a =>
+      a.name.toLowerCase().includes(keyword) ||
+      a.work.toLowerCase().includes(keyword)
+    )
     .sort((a, b) => b.likes - a.likes)
     .forEach((a, i) => {
       const card = document.createElement("div");
