@@ -1,0 +1,46 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f9f9f9;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* カード全体を横並びに */
+.card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  padding: 20px;
+  margin: 15px auto;
+  width: 90%;
+  max-width: 700px;
+
+  display: flex;               /* 横並び */
+  align-items: center;         /* 垂直中央揃え */
+  justify-content: space-between;
+  gap: 16px;
+}
+
+/* テキスト部分を折り返しやすく */
+.card-content {
+  flex: 1 1 auto;
+}
+
+/* Google検索ボタン */
+.search-btn {
+  flex: 0 0 auto;
+  background: #4285F4;         /* Googleブルー */
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: opacity .2s;
+}
+.search-btn:hover {
+  opacity: 0.85;
+}
